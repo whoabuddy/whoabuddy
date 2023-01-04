@@ -2,7 +2,7 @@
 name: Generate Snake
 
 on:
-  # run at 4am on Mondays
+  # run at 4am UTC on Mondays
   # thank you crontab.guru
   schedule:
     - cron: "0 4 * * 1"
@@ -23,9 +23,9 @@ jobs:
         uses: Platane/snk/svg-only@v2
         with:
           github_user_name: ${{ github.repository_owner }}
-        outputs: |
-          dist/github-contribution-grid-snake.svg
-          dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
       # publish SVG to github pages
       - name: Publish SVG file
         uses: crazy-max/ghaction-github-pages@v3.1.0
